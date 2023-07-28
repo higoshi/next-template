@@ -31,7 +31,6 @@ COPY --from=builder /next-app/public ./public
 
 RUN corepack enable yarn
 RUN yarn workspaces focus --all --production
-RUN yarn install --immutable
 
 EXPOSE 3000
 
