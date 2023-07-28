@@ -1,0 +1,6 @@
+{
+  "name": "Next.js Application",
+  "dockerComposeFile": ["../compose.yml"],
+  "service": "next-app",
+  "workspaceFolder": "/next-app"
+}
