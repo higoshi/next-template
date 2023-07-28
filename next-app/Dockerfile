@@ -1,7 +1,7 @@
 # builder
 FROM node:16-slim as builder
 
-WORKDIR /app
+WORKDIR /next-app
 
 COPY package.json ./
 COPY yarn.lock ./
@@ -19,15 +19,15 @@ RUN yarn build
 # Production
 FROM node:16-slim as production
 
-WORKDIR /app
+WORKDIR /next-app
 
 COPY package.json ./
 COPY yarn.lock ./
 COPY .yarnrc.yml ./
 COPY .yarn/ ./.yarn
 
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
+COPY --from=builder /next-app/.next ./.next
+COPY --from=builder /next-app/public ./public
 
 RUN corepack enable yarn
 RUN yarn install --immutable

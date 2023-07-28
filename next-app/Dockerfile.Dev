@@ -1,9 +1,18 @@
 FROM node:16-slim
 
-WORKDIR /app
+WORKDIR /next-app
+
+COPY package.json ./
+COPY yarn.lock ./
+COPY .yarnrc.yml ./
+COPY .yarn/ ./.yarn
+
+RUN corepack enable yarn
+RUN yarn install
 
 COPY . .
 
+RUN corepack enable yarn
 RUN yarn install
 
 EXPOSE 3000
