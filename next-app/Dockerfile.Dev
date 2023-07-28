@@ -7,9 +7,6 @@ COPY . .
 RUN corepack enable yarn
 RUN yarn install
 
-RUN corepack enable yarn
-RUN yarn install
-
 EXPOSE 3000
 
 CMD ["yarn", "dev"]
