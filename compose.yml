@@ -1,15 +1,9 @@
 services:
   next-app:
     build:
-      context: "./next-app"
+      context: "./"
       dockerfile: Dockerfile.Dev
     volumes:
-      - ./next-app:/next-app
-      - yarn-cache:/next-app/.yarn/cache
-      - node-modules:/next-app/node_modules
+      - ./packages:/app/packages
     ports:
      - 3000:3000
-
-volumes:
-  yarn-cache:
-  node-modules:

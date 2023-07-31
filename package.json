@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r run build"
+  },
+  "packageManager": "pnpm@8.6.11",
+  "engines": {
+    "node": ">=16.9.0"
+  }
+}

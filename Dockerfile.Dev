@@ -1,0 +1,15 @@
+FROM node:16-slim
+
+WORKDIR /app
+
+COPY ./pnpm-lock.yaml ./pnpm-workspace.yaml ./package.json ./
+COPY ./packages ./packages
+
+WORKDIR /app/packages/next-app
+
+RUN corepack enable pnpm
+RUN pnpm install
+
+EXPOSE 3000
+
+CMD ["pnpm", "dev"]

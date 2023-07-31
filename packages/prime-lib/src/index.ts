@@ -1,0 +1,1 @@
+export {isPrimeNumber} from './isPrimeNumber';
