@@ -1,5 +1,5 @@
 # builder
-FROM node:16-slim as builder
+FROM node:16-alpine as builder
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ RUN pnpm build
 
 
 # Production
-FROM node:16-slim as production
+FROM node:16-alpine as production
 
 WORKDIR /app
 
