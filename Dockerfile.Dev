@@ -2,8 +2,7 @@ FROM node:16-slim
 
 WORKDIR /app
 
-COPY ./pnpm-lock.yaml ./pnpm-workspace.yaml ./package.json ./
-COPY ./packages ./packages
+COPY . .
 
 WORKDIR /app/packages/next-app
 
